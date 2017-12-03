@@ -80,4 +80,9 @@ public class MainActivity extends AppCompatActivity {
         displayForG (scoreG);
     }
 
+    public void checkWinner () {
+        if
+    }
+
+
 }
