@@ -73,7 +73,8 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:onClick="add150ForG"
-                android:text="Snitch catch!" />
+                android:text="Snitch catch!"
+                android:background="#FFC400"/>
 
         </LinearLayout>
 
@@ -145,7 +146,8 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
                 android:onClick="add150ForS"
-                android:text="Snitch catch!" />
+                android:text="Snitch catch!"
+                android:background="#FFC400"/>
         </LinearLayout>
 
 
