@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         displayForS(scoreS);
         scoreG = 0;
         displayForG(scoreG);
+        displayWinner("Who will win?");
 
         Button hoopG = (Button) findViewById(R.id.hoopG);
         hoopG.setEnabled(true);
@@ -105,20 +106,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void winnerCheck() {
         if (scoreG > scoreS) {
-            displayForGString("Griffindor WINS!");
+            displayWinner("Griffindor WINS!");
         } else if (scoreG < scoreS) {
-            displayForSString("Slythrin WINS!");
+            displayWinner("Slythrin WINS!");
         } else if (scoreG == scoreS) {
-            displayForGString("Tie!");
+            displayWinner("Tie!");
         }
     }
 
-    public void displayForSString(String result) {
-        TextView scoreView = (TextView) findViewById(R.id.whoWon);
-        scoreView.setText(result);
-    }
-
-    public void displayForGString(String result) {
+    public void displayWinner(String result) {
         TextView scoreView = (TextView) findViewById(R.id.whoWon);
         scoreView.setText(result);
     }
