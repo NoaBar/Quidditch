@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.lang.reflect.Method;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -87,8 +89,36 @@ public class MainActivity extends AppCompatActivity {
         displayForS(scoreS);
         scoreG = 0;
         displayForG(scoreG);
-        displayWinner("Who will win?");
+        whoWon = "Who will win?";
+        displayWinner(whoWon);
+        enableButtons();
 
+    }
+
+    /** saving message "whoWon" as a string
+     */
+    String whoWon = "Who will win?";
+
+
+    public void displayWinner(String message) {
+        whoWon = message;
+        TextView scoreView = (TextView) findViewById(R.id.whoWonT);
+        scoreView.setText(message);
+    }
+
+
+    public void winnerCheck() {
+        if (scoreG > scoreS) {
+            displayWinner("Gryffindor WINS!");
+        } else if (scoreG < scoreS) {
+            displayWinner("Slytherin WINS!");
+        } else if (scoreG == scoreS) {
+            displayWinner("Tie!");
+        }
+
+    }
+
+    public void enableButtons() {
         Button hoopG = (Button) findViewById(R.id.hoopG);
         hoopG.setEnabled(true);
         Button penaltyG = (Button) findViewById(R.id.penaltyG);
@@ -101,24 +131,7 @@ public class MainActivity extends AppCompatActivity {
         penatlyS.setEnabled(true);
         Button snitchS = (Button) findViewById(R.id.snitchS);
         snitchS.setEnabled(true);
-
     }
-
-    public void winnerCheck() {
-        if (scoreG > scoreS) {
-            displayWinner("Gryffindor WINS!");
-        } else if (scoreG < scoreS) {
-            displayWinner("Slytherin WINS!");
-        } else if (scoreG == scoreS) {
-            displayWinner("Tie!");
-        }
-    }
-
-    public void displayWinner(String result) {
-        TextView scoreView = (TextView) findViewById(R.id.whoWon);
-        scoreView.setText(result);
-    }
-
 
     public void disableButtons() {
         Button hoopG = (Button) findViewById(R.id.hoopG);
@@ -135,5 +148,36 @@ public class MainActivity extends AppCompatActivity {
         snitchS.setEnabled(false);
 
     }
+
+    /**
+     Method to keep data with rotation
+     */
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("scoreG",scoreG);
+        outState.putInt("scoreS",scoreS);
+        outState.putString("whoWon",whoWon);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scoreG=savedInstanceState.getInt("scoreG",scoreG);
+        scoreS=savedInstanceState.getInt("scoreS",scoreS);
+        whoWon=savedInstanceState.getString("whoWon",whoWon);
+        displayForG(scoreG);
+        displayForS(scoreS);
+        displayWinner(whoWon);
+
+        if (whoWon=="Who will win?"){
+          enableButtons();
+        } else {
+            disableButtons();
+        }
+    }
+
+
 
 }
