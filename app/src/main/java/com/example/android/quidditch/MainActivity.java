@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void winnerCheck() {
         if (scoreG > scoreS) {
-            displayWinner("Griffindor WINS!");
+            displayWinner("Gryffindor WINS!");
         } else if (scoreG < scoreS) {
             displayWinner("Slytherin WINS!");
         } else if (scoreG == scoreS) {
