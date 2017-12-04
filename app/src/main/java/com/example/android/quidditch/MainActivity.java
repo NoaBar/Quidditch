@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     public void add150ForG (View view) {
         scoreG = scoreG + 150;
         displayForG (scoreG);
+        winnerCheck();
     }
 
     /**
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     public void add150ForS (View view) {
         scoreS = scoreS + 150;
         displayForS (scoreS);
+        winnerCheck ();
     }
 
     /**
@@ -80,9 +82,33 @@ public class MainActivity extends AppCompatActivity {
         displayForG (scoreG);
     }
 
-    public void checkWinner () {
-        if
+    public void winnerCheck() {
+        if (scoreG > scoreS) {
+            displayForGString("WINS!");
+        }
+        else if (scoreG < scoreS) {
+            displayForSString("WINS!");
+        }
+        else if (scoreG == scoreS) {
+            displayForSString("Tie!");
+            displayForGString("Tie!");
+        }
+    }
+    public void displayForSString(String result) {
+        TextView scoreView = (TextView) findViewById(R.id.S_score);
+        scoreView.setText(result);
+    }
+
+    public void displayForGString(String result) {
+        TextView scoreView = (TextView) findViewById(R.id.G_score);
+        scoreView.setText(result);
     }
 
 
-}
+
+    /**
+     * להוסיף שהמספרים לא יתאפסו בסיבוב מסך
+     */
+
+
+ }

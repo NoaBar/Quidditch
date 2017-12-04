@@ -124,7 +124,7 @@
             android:layout_marginLeft="24dp"
             android:layout_marginRight="24dp"
             android:onClick="add150ForS"
-            android:text="Snitch" />
+            android:text="Snitch catch!" />
     </LinearLayout>
 
 </LinearLayout>
