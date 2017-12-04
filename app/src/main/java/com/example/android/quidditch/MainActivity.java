@@ -138,9 +138,25 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     /**
-     * להוסיף שהמספרים לא יתאפסו בסיבוב מסך
+     * Method to keep data with rotation
      */
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt("scoreG",scoreG);
+        outState.putInt("scoreS",scoreS);
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        scoreG=savedInstanceState.getInt("scoreG",scoreG);
+        displayForGString(String);
+        scoreS=savedInstanceState.getInt("scoreS",scoreS);
+        displayForSString(String);
+    }
 
  }
