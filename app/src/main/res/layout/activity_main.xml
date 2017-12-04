@@ -39,6 +39,7 @@
             android:textSize="56sp" />
 
         <Button
+            android:id="@+id/hoopG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -48,6 +49,7 @@
             android:text="hoop" />
 
         <Button
+            android:id="@+id/penaltyG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -57,6 +59,7 @@
             android:text="Penalty shot" />
 
         <Button
+            android:id="@+id/snitchG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
@@ -101,6 +104,7 @@
             android:textSize="56sp" />
 
         <Button
+            android:id="@+id/hoopS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -110,6 +114,7 @@
             android:text="hoop" />
 
         <Button
+            android:id="@+id/penaltyS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -119,6 +124,7 @@
             android:text="Penalty shot" />
 
         <Button
+            android:id="@+id/snitchS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"

@@ -3,6 +3,7 @@ package com.example.android.quidditch;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.view.View;
+        import android.widget.Button;
         import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         scoreG = scoreG + 150;
         displayForG (scoreG);
         winnerCheck();
+        disableButtons ();
+
     }
 
     /**
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         scoreS = scoreS + 150;
         displayForS (scoreS);
         winnerCheck ();
+        disableButtons ();
     }
 
     /**
@@ -80,6 +84,19 @@ public class MainActivity extends AppCompatActivity {
         displayForS (scoreS);
         scoreG = 0;
         displayForG (scoreG);
+        Button hoopG = (Button) findViewById(R.id.hoopG);
+        hoopG.setEnabled(true);
+        Button penaltyG = (Button) findViewById(R.id.penaltyG);
+        penaltyG.setEnabled(true);
+        Button snitchG = (Button) findViewById(R.id.snitchG);
+        snitchG.setEnabled(true);
+        Button hoopS = (Button) findViewById(R.id.hoopS);
+        hoopS.setEnabled(true);
+        Button penatlyS = (Button) findViewById(R.id.penaltyS);
+        penatlyS.setEnabled(true);
+        Button snitchS = (Button) findViewById(R.id.snitchS);
+        snitchS.setEnabled(true);
+
     }
 
     public void winnerCheck() {
@@ -105,6 +122,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void disableButtons (){
+        Button hoopG = (Button) findViewById(R.id.hoopG);
+        hoopG.setEnabled(false);
+        Button penaltyG = (Button) findViewById(R.id.penaltyG);
+        penaltyG.setEnabled(false);
+        Button snitchG = (Button) findViewById(R.id.snitchG);
+        snitchG.setEnabled(false);
+        Button hoopS = (Button) findViewById(R.id.hoopS);
+        hoopS.setEnabled(false);
+        Button penatlyS = (Button) findViewById(R.id.penaltyS);
+        penatlyS.setEnabled(false);
+        Button snitchS = (Button) findViewById(R.id.snitchS);
+        snitchS.setEnabled(false);
+
+    }
 
     /**
      * להוסיף שהמספרים לא יתאפסו בסיבוב מסך
