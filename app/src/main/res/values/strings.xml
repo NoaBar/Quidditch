@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Quidditch</string>
+    <string name="gryffindor">Gryffindor</string>
+    <string name="hoopG">hoop</string>
+    <string name="penalty_shotG">Penalty shot</string>
+    <string name="snitch_catchG">Snitch catch!</string>
+    <string name="slytherin">Slytherin</string>
+    <string name="scoreG">0</string>
+    <string name="scoreS">0</string>
+    <string name="hoopS">hoop</string>
+    <string name="penalty_shotS">Penalty shot</string>
+    <string name="snitch_catchS">Snitch catch!</string>
+    <string name="who_will_win">Who will win?</string>
+    <string name="reset">reset</string>
 </resources>

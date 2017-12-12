@@ -30,7 +30,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Gryffindor"
+                        android:text="@string/gryffindor"
                         android:textColor="#000000"
                         android:textSize="22sp"
                         android:textStyle="bold" />
@@ -47,7 +47,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:gravity="center"
-                        android:text="0"
+                        android:text="@string/scoreG"
                         android:textColor="#000000"
                         android:textSize="40sp" />
 
@@ -59,7 +59,7 @@
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:onClick="add10ForG"
-                        android:text="hoop" />
+                        android:text="@string/hoopG" />
 
                     <Button
                         android:id="@+id/penaltyG"
@@ -69,7 +69,7 @@
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:onClick="add20ForG"
-                        android:text="Penalty shot" />
+                        android:text="@string/penalty_shotG" />
 
                     <Button
                         android:id="@+id/snitchG"
@@ -79,7 +79,7 @@
                         android:layout_marginRight="24dp"
                         android:background="#FFC400"
                         android:onClick="add150ForG"
-                        android:text="Snitch catch!" />
+                        android:text="@string/snitch_catchG" />
 
                 </LinearLayout>
 
@@ -102,7 +102,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:gravity="center"
                         android:padding="10dp"
-                        android:text="Slytherin"
+                        android:text="@string/slytherin"
                         android:textColor="#000000"
                         android:textSize="22sp"
                         android:textStyle="bold" />
@@ -120,7 +120,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:gravity="center"
-                        android:text="0"
+                        android:text="@string/scoreS"
                         android:textColor="#000000"
                         android:textSize="40sp" />
 
@@ -132,7 +132,7 @@
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:onClick="add10ForS"
-                        android:text="hoop" />
+                        android:text="@string/hoopS" />
 
                     <Button
                         android:id="@+id/penaltyS"
@@ -142,7 +142,7 @@
                         android:layout_marginLeft="24dp"
                         android:layout_marginRight="24dp"
                         android:onClick="add20ForS"
-                        android:text="Penalty shot" />
+                        android:text="@string/penalty_shotS" />
 
                     <Button
                         android:id="@+id/snitchS"
@@ -152,7 +152,7 @@
                         android:layout_marginRight="24dp"
                         android:background="#FFC400"
                         android:onClick="add150ForS"
-                        android:text="Snitch catch!" />
+                        android:text="@string/snitch_catchS" />
                 </LinearLayout>
 
 
@@ -169,7 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Who will win?"
+                    android:text="@string/who_will_win"
                     android:textColor="#1A237E"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -181,7 +181,7 @@
                     android:layout_gravity="center"
                     android:onClick="resetScore"
                     android:layout_margin="10dp"
-                    android:text="reset" />
+                    android:text="@string/reset" />
 
             </LinearLayout>
 
