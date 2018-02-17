@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayForG(int score) {
         TextView scoreView = (TextView) findViewById(R.id.G_score);
-        scoreView.setText(String.valueOf(score));
+        scoreView.setText(String.valueOf(scoreG));
     }
 
 
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void displayForS(int score) {
         TextView scoreView = (TextView) findViewById(R.id.S_score);
-        scoreView.setText(String.valueOf(score));
+        scoreView.setText(String.valueOf(scoreS));
     }
 
     public void resetScore(View view) {
@@ -134,7 +134,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void disableButtons() {
-        Button hoopG = (Button) findViewById(R.id.hoopG);
+        Button hoopG;
+        hoopG = (Button) findViewById(R.id.hoopG);
         hoopG.setEnabled(false);
         Button penaltyG = (Button) findViewById(R.id.penaltyG);
         penaltyG.setEnabled(false);

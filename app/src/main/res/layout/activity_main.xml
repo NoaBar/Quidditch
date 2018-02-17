@@ -4,13 +4,17 @@
     tools:context="com.example.android.quidditch.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#78909C">
+    android:background="@color/background">
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/nameOfGroup"
+        android:text="@string/quidditch"
+        />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -25,59 +29,36 @@
 
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:gravity="center"
-                        android:padding="10dp"
+                        style="@style/nameOfGroup"
                         android:text="@string/gryffindor"
-                        android:textColor="#000000"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+                         />
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
+                        style="@style/groupImage"
                         android:src="@drawable/griffindor" />
 
                     <TextView
+                        style="@style/score"
                         android:id="@+id/G_score"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-light"
-                        android:gravity="center"
                         android:text="@string/scoreG"
-                        android:textColor="#000000"
-                        android:textSize="40sp" />
+                         />
 
                     <Button
                         android:id="@+id/hoopG"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        style="@style/buttons"
                         android:onClick="add10ForG"
                         android:text="@string/hoopG" />
 
                     <Button
                         android:id="@+id/penaltyG"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        style="@style/buttons"
                         android:onClick="add20ForG"
                         android:text="@string/penalty_shotG" />
 
                     <Button
                         android:id="@+id/snitchG"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
-                        android:background="#FFC400"
+                        style="@style/buttons"
+                        android:background="@color/orange"
                         android:onClick="add150ForG"
                         android:text="@string/snitch_catchG" />
 
@@ -97,60 +78,37 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-medium"
-                        android:gravity="center"
-                        android:padding="10dp"
+                        style="@style/nameOfGroup"
                         android:text="@string/slytherin"
-                        android:textColor="#000000"
-                        android:textSize="22sp"
-                        android:textStyle="bold" />
+                         />
 
                     <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="center"
+                        style="@style/groupImage"
                         android:src="@drawable/slytherin" />
 
 
                     <TextView
+                        style="@style/score"
                         android:id="@+id/S_score"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-light"
-                        android:gravity="center"
                         android:text="@string/scoreS"
-                        android:textColor="#000000"
-                        android:textSize="40sp" />
+                        />
 
                     <Button
                         android:id="@+id/hoopS"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
                         android:onClick="add10ForS"
-                        android:text="@string/hoopS" />
+                        android:text="@string/hoopS"
+                        style="@style/buttons" />
 
                     <Button
                         android:id="@+id/penaltyS"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        style="@style/buttons"
                         android:onClick="add20ForS"
                         android:text="@string/penalty_shotS" />
 
                     <Button
                         android:id="@+id/snitchS"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
-                        android:background="#FFC400"
+                        style="@style/buttons"
+                        android:background="@color/orange"
                         android:onClick="add150ForS"
                         android:text="@string/snitch_catchS" />
                 </LinearLayout>
@@ -161,8 +119,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_margin="50dp">
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/whoWonT"
@@ -170,9 +127,10 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/who_will_win"
-                    android:textColor="#1A237E"
+                    android:textColor="@color/midnightBlue"
                     android:textSize="30sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_margin="20dp"/>
 
                 <Button
                     android:id="@+id/reset"

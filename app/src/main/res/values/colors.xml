@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#45b08c</color>
+    <color name="colorPrimaryDark">#2e765e</color>
+    <color name="colorAccent">#7b9e93</color>
+
+    <color name="black">#000</color>
+    <color name="gold">#FFC400</color>
+    <color name="oldBackground">#78909C</color>
+    <color name="winner">#314e70</color>
+    <color name="background">#e2eae9</color>
+
+    <color name="midnightBlue">#284e60</color>
+    <color name="orange">#f99b45</color>
+    <color name="blueGrey">#63aac0</color>
+    <color name="hotPink">#d95980</color>
+
 </resources>
