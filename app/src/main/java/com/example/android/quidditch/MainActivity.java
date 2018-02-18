@@ -11,16 +11,31 @@ import java.lang.reflect.Method;
 public class MainActivity extends AppCompatActivity {
 
 
+    int scoreS = 0;
+    int scoreG = 0;
+
+    Button hoopG;
+    Button penaltyG;
+    Button snitchG;
+    Button hoopS;
+    Button penaltyS;
+    Button snitchS;
+
     /**
      * Griffindor
      */
-
-    int scoreG = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        hoopG = (Button) findViewById(R.id.hoopG);
+        penaltyG = (Button) findViewById(R.id.penaltyG);
+        snitchG = (Button) findViewById(R.id.snitchG);
+        hoopS = (Button) findViewById(R.id.hoopS);
+        penaltyS = (Button) findViewById(R.id.penaltyS);
+        snitchS = (Button) findViewById(R.id.snitchS);
     }
 
 
@@ -55,8 +70,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Slytherin
      */
-
-    int scoreS = 0;
 
     public void add10ForS(View view) {
         scoreS = scoreS + 10;
@@ -95,12 +108,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /** saving message "whoWon" as a string
+    /**
+     * saving message "whoWon" as a string
      */
     String whoWon = "Who will win?";
 
 
-    public void displayWinner(String message) {
+    public void displayWinner(String message ) {
         whoWon = message;
         TextView scoreView = (TextView) findViewById(R.id.whoWonT);
         scoreView.setText(message);
@@ -119,66 +133,52 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void enableButtons() {
-        Button hoopG = (Button) findViewById(R.id.hoopG);
         hoopG.setEnabled(true);
-        Button penaltyG = (Button) findViewById(R.id.penaltyG);
         penaltyG.setEnabled(true);
-        Button snitchG = (Button) findViewById(R.id.snitchG);
         snitchG.setEnabled(true);
-        Button hoopS = (Button) findViewById(R.id.hoopS);
         hoopS.setEnabled(true);
-        Button penatlyS = (Button) findViewById(R.id.penaltyS);
-        penatlyS.setEnabled(true);
-        Button snitchS = (Button) findViewById(R.id.snitchS);
+        penaltyS.setEnabled(true);
         snitchS.setEnabled(true);
     }
 
     public void disableButtons() {
-        Button hoopG;
-        hoopG = (Button) findViewById(R.id.hoopG);
         hoopG.setEnabled(false);
-        Button penaltyG = (Button) findViewById(R.id.penaltyG);
         penaltyG.setEnabled(false);
-        Button snitchG = (Button) findViewById(R.id.snitchG);
         snitchG.setEnabled(false);
-        Button hoopS = (Button) findViewById(R.id.hoopS);
         hoopS.setEnabled(false);
-        Button penatlyS = (Button) findViewById(R.id.penaltyS);
-        penatlyS.setEnabled(false);
-        Button snitchS = (Button) findViewById(R.id.snitchS);
+        penaltyS.setEnabled(false);
         snitchS.setEnabled(false);
-
     }
 
+
     /**
-     Method to keep data with rotation
+     * Method to keep data with rotation
      */
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt("scoreG",scoreG);
-        outState.putInt("scoreS",scoreS);
-        outState.putString("whoWon",whoWon);
+        outState.putInt("scoreG", scoreG);
+        outState.putInt("scoreS", scoreS);
+        outState.putString("whoWon", whoWon);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        scoreG=savedInstanceState.getInt("scoreG",scoreG);
-        scoreS=savedInstanceState.getInt("scoreS",scoreS);
-        whoWon=savedInstanceState.getString("whoWon",whoWon);
+        scoreG = savedInstanceState.getInt("scoreG", scoreG);
+        scoreS = savedInstanceState.getInt("scoreS", scoreS);
+        whoWon = savedInstanceState.getString("whoWon", whoWon);
         displayForG(scoreG);
         displayForS(scoreS);
         displayWinner(whoWon);
 
-        if (whoWon=="Who will win?"){
-          enableButtons();
+        if (whoWon == "Who will win?") {
+            enableButtons();
         } else {
             disableButtons();
         }
     }
-
 
 
 }
