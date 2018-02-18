@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         scoreG = scoreG + 150;
         displayForG(scoreG);
         winnerCheck();
-        disableButtons();
+        enableButtons(false);
 
     }
 
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         scoreS = scoreS + 150;
         displayForS(scoreS);
         winnerCheck();
-        disableButtons();
+        enableButtons(false);
     }
 
     /**
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         displayForG(scoreG);
         whoWon = "Who will win?";
         displayWinner(whoWon);
-        enableButtons();
+        enableButtons(true);
 
     }
 
@@ -132,24 +132,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void enableButtons() {
-        hoopG.setEnabled(true);
-        penaltyG.setEnabled(true);
-        snitchG.setEnabled(true);
-        hoopS.setEnabled(true);
-        penaltyS.setEnabled(true);
-        snitchS.setEnabled(true);
-    }
 
-    public void disableButtons() {
-        hoopG.setEnabled(false);
-        penaltyG.setEnabled(false);
-        snitchG.setEnabled(false);
-        hoopS.setEnabled(false);
-        penaltyS.setEnabled(false);
-        snitchS.setEnabled(false);
+    public void enableButtons(boolean enable) {
+        hoopG.setEnabled(enable);
+        penaltyG.setEnabled(enable);
+        snitchG.setEnabled(enable);
+        hoopS.setEnabled(enable);
+        penaltyS.setEnabled(enable);
+        snitchS.setEnabled(enable);
     }
-
 
     /**
      * Method to keep data with rotation
@@ -174,9 +165,9 @@ public class MainActivity extends AppCompatActivity {
         displayWinner(whoWon);
 
         if (whoWon == "Who will win?") {
-            enableButtons();
+            enableButtons(true);
         } else {
-            disableButtons();
+            enableButtons(false);
         }
     }
 
