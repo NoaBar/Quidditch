@@ -21,6 +21,13 @@ public class MainActivity extends AppCompatActivity {
     Button penaltyS;
     Button snitchS;
 
+    TextView scoreViewWin;
+    TextView scoreViewG;
+    TextView scoreViewS;
+
+    String whoWon = "Who will win?";
+
+
     /**
      * Griffindor
      */
@@ -36,23 +43,27 @@ public class MainActivity extends AppCompatActivity {
         hoopS = (Button) findViewById(R.id.hoopS);
         penaltyS = (Button) findViewById(R.id.penaltyS);
         snitchS = (Button) findViewById(R.id.snitchS);
+
+        scoreViewWin = (TextView) findViewById(R.id.whoWonT);
+        scoreViewG = (TextView) findViewById(R.id.G_score);
+        scoreViewS = (TextView) findViewById(R.id.S_score);
     }
 
 
     public void add10ForG(View view) {
         scoreG = scoreG + 10;
-        displayForG(scoreG);
+        displayForG();
 
     }
 
     public void add20ForG(View view) {
         scoreG = scoreG + 20;
-        displayForG(scoreG);
+        displayForG();
     }
 
     public void add150ForG(View view) {
         scoreG = scoreG + 150;
-        displayForG(scoreG);
+        displayForG();
         winnerCheck();
         enableButtons(false);
 
@@ -61,9 +72,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given score for G.
      */
-    public void displayForG(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.G_score);
-        scoreView.setText(String.valueOf(scoreG));
+    public void displayForG() {
+        scoreViewG.setText(String.valueOf(scoreG));
     }
 
 
@@ -73,18 +83,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void add10ForS(View view) {
         scoreS = scoreS + 10;
-        displayForS(scoreS);
+        displayForS();
 
     }
 
     public void add20ForS(View view) {
         scoreS = scoreS + 20;
-        displayForS(scoreS);
+        displayForS();
     }
 
     public void add150ForS(View view) {
         scoreS = scoreS + 150;
-        displayForS(scoreS);
+        displayForS();
         winnerCheck();
         enableButtons(false);
     }
@@ -92,32 +102,26 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Displays the given score for S.
      */
-    public void displayForS(int score) {
-        TextView scoreView = (TextView) findViewById(R.id.S_score);
-        scoreView.setText(String.valueOf(scoreS));
+    public void displayForS() {
+        scoreViewS.setText(String.valueOf(scoreS));
     }
 
     public void resetScore(View view) {
         scoreS = 0;
-        displayForS(scoreS);
+        displayForS();
         scoreG = 0;
-        displayForG(scoreG);
+        displayForG();
         whoWon = "Who will win?";
         displayWinner(whoWon);
         enableButtons(true);
-
     }
 
     /**
      * saving message "whoWon" as a string
      */
-    String whoWon = "Who will win?";
-
-
-    public void displayWinner(String message ) {
+    public void displayWinner(String message) {
         whoWon = message;
-        TextView scoreView = (TextView) findViewById(R.id.whoWonT);
-        scoreView.setText(message);
+        scoreViewWin.setText(message);
     }
 
 
@@ -160,8 +164,8 @@ public class MainActivity extends AppCompatActivity {
         scoreG = savedInstanceState.getInt("scoreG", scoreG);
         scoreS = savedInstanceState.getInt("scoreS", scoreS);
         whoWon = savedInstanceState.getString("whoWon", whoWon);
-        displayForG(scoreG);
-        displayForS(scoreS);
+        displayForG();
+        displayForS();
         displayWinner(whoWon);
 
         if (whoWon == "Who will win?") {
