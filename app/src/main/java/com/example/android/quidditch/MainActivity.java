@@ -1,15 +1,17 @@
 package com.example.android.quidditch;
 
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.TransitionManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.lang.reflect.Method;
+
 
 public class MainActivity extends AppCompatActivity {
-
 
     int scoreS = 0;
     int scoreG = 0;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     String whoWon = "Who will win?";
 
+    ConstraintLayout constraintLayout;
 
     /**
      * Griffindor
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        constraintLayout = findViewById(R.id.activity_main_first);
 
         hoopG = (Button) findViewById(R.id.hoopG);
         penaltyG = (Button) findViewById(R.id.penaltyG);
@@ -45,15 +49,34 @@ public class MainActivity extends AppCompatActivity {
         snitchS = (Button) findViewById(R.id.snitchS);
 
         scoreViewWin = (TextView) findViewById(R.id.whoWonT);
-        scoreViewG = (TextView) findViewById(R.id.G_score);
-        scoreViewS = (TextView) findViewById(R.id.S_score);
+        scoreViewG = (TextView) findViewById(R.id.g_score);
+        scoreViewS = (TextView) findViewById(R.id.s_score);
     }
 
+    public void animateToKeyframeGWins() {
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.load(this, R.layout.g_wins);
+        TransitionManager.beginDelayedTransition(constraintLayout);
+        constraintLayout.setConstraintSet(constraintSet);
+    }
+
+    public void animateToKeyframeSWins() {
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.load(this, R.layout.s_wins);
+        TransitionManager.beginDelayedTransition(constraintLayout);
+        constraintLayout.setConstraintSet(constraintSet);
+    }
+
+    public void animateToKeyframeReset() {
+        ConstraintSet constraintSet = new ConstraintSet();
+        constraintSet.load(this, R.layout.activity_main);
+        TransitionManager.beginDelayedTransition(constraintLayout);
+        constraintLayout.setConstraintSet(constraintSet);
+    }
 
     public void add10ForG(View view) {
         scoreG = scoreG + 10;
         displayForG();
-
     }
 
     public void add20ForG(View view) {
@@ -107,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetScore(View view) {
+        animateToKeyframeReset();
         scoreS = 0;
         displayForS();
         scoreG = 0;
@@ -127,9 +151,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void winnerCheck() {
         if (scoreG > scoreS) {
-            displayWinner("Gryffindor WINS!");
+            scoreViewWin.setText(R.string.g_wins);
+            animateToKeyframeGWins();
+            //displayWinner("Gryffindor WINS!");
         } else if (scoreG < scoreS) {
-            displayWinner("Slytherin WINS!");
+            animateToKeyframeSWins();
+            scoreViewWin.setText(R.string.s_wins);
+            //displayWinner("Slytherin WINS!");
         } else if (scoreG == scoreS) {
             displayWinner("Tie!");
         }

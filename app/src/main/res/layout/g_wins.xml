@@ -3,11 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.android.quidditch.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/g_image"
         android:layout_width="281dp"
         android:layout_height="331dp"
         android:layout_marginEnd="8dp"
@@ -23,21 +24,226 @@
         app:srcCompat="@drawable/griffindor" />
 
     <TextView
-        android:id="@+id/g_wins"
+        android:id="@+id/whoWonT"
         android:layout_width="320dp"
         android:layout_height="76dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/g_wins"
         android:foregroundGravity="center"
         android:gravity="center_horizontal|center"
-        android:text="TextView"
+        android:text="@string/g_wins"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/reset"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/g_image"
         tools:text="@string/g_wins" />
+
+    <Button
+        android:id="@+id/snitchG"
+        style="@style/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/orange"
+        android:onClick="add150ForG"
+        android:text="@string/snitch_catchG"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/snitchS"
+        app:layout_constraintEnd_toEndOf="@+id/g_image"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/g_image" />
+
+    <TextView
+        android:id="@+id/quidditch"
+        style="@style/nameOfGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/quidditch"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/g_title"
+        style="@style/nameOfGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/gryffindor"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/s_title"
+        app:layout_constraintEnd_toStartOf="@+id/s_title"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/g_score"
+        style="@style/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/scoreG"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/s_score"
+        app:layout_constraintEnd_toEndOf="@+id/g_image"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="@+id/g_image" />
+
+    <Button
+        android:id="@+id/hoopG"
+        style="@style/buttons"
+        android:layout_width="84dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:onClick="add10ForG"
+        android:text="@string/hoopG"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/g_image"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/g_image"
+        app:layout_constraintTop_toBottomOf="@+id/g_score" />
+
+    <Button
+        android:id="@+id/penaltyG"
+        style="@style/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="add20ForG"
+        android:text="@string/penalty_shotG"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/penaltyS"
+        app:layout_constraintEnd_toEndOf="@+id/g_image"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toStartOf="@+id/g_image" />
+
+    <TextView
+        android:id="@+id/s_title"
+        style="@style/nameOfGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/slytherin"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/g_title"
+        app:layout_constraintTop_toBottomOf="@+id/quidditch" />
+
+    <ImageView
+        android:id="@+id/s_image"
+        style="@style/groupImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/Slytherin_symbol"
+        android:src="@drawable/slytherin"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/s_title"
+        app:layout_constraintStart_toStartOf="@+id/s_title"
+        app:layout_constraintTop_toBottomOf="@+id/s_title" />
+
+    <TextView
+        android:id="@+id/s_score"
+        style="@style/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/scoreS"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/s_image"
+        app:layout_constraintStart_toStartOf="@+id/s_image"
+        app:layout_constraintTop_toBottomOf="@+id/s_image" />
+
+    <Button
+        android:id="@+id/hoopS"
+        style="@style/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="add10ForS"
+        android:text="@string/hoopS"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/hoopG"
+        app:layout_constraintEnd_toEndOf="@+id/s_image"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="@+id/s_image" />
+
+    <Button
+        android:id="@+id/penaltyS"
+        style="@style/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="add20ForS"
+        android:text="@string/penalty_shotS"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/s_image"
+        app:layout_constraintHorizontal_bias="0.352"
+        app:layout_constraintStart_toStartOf="@+id/s_image"
+        app:layout_constraintTop_toBottomOf="@+id/hoopS" />
+
+    <Button
+        android:id="@+id/snitchS"
+        style="@style/buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/orange"
+        android:onClick="add150ForS"
+        android:text="@string/snitch_catchS"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/s_image"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/s_image"
+        app:layout_constraintTop_toBottomOf="@+id/penaltyS" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="resetScore"
+        android:text="@string/reset"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="1dp"
+        android:layout_height="380dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/oldBackground"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/whoWonT"
+        app:layout_constraintEnd_toStartOf="@+id/s_score"
+        app:layout_constraintStart_toEndOf="@+id/g_score"
+        app:layout_constraintTop_toBottomOf="@+id/quidditch"></LinearLayout>
 </android.support.constraint.ConstraintLayout>
