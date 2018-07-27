@@ -13,4 +13,8 @@
     <string name="who_will_win">Who will win?</string>
     <string name="reset">reset</string>
     <string name="quidditch">Quidditch</string>
+    <string name="Slytherin_symbol">Slytherin symbol</string>
+    <string name="Gryffindor_symbol">Gryffindor symbol</string>
+    <string name="g_wins">Gryffindor WINS!</string>
+    <string name="s_wins">Slytherin WINS!</string>
 </resources>
