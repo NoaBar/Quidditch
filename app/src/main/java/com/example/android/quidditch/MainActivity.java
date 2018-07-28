@@ -89,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
         displayForG();
         winnerCheck();
         enableButtons(false);
-
     }
 
     /**
@@ -107,7 +106,6 @@ public class MainActivity extends AppCompatActivity {
     public void add10ForS(View view) {
         scoreS = scoreS + 10;
         displayForS();
-
     }
 
     public void add20ForS(View view) {
@@ -151,19 +149,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void winnerCheck() {
         if (scoreG > scoreS) {
-            scoreViewWin.setText(R.string.g_wins);
             animateToKeyframeGWins();
-            //displayWinner("Gryffindor WINS!");
+            displayWinner("Gryffindor WINS!");
         } else if (scoreG < scoreS) {
             animateToKeyframeSWins();
-            scoreViewWin.setText(R.string.s_wins);
-            //displayWinner("Slytherin WINS!");
+            displayWinner("Slytherin WINS!");
         } else if (scoreG == scoreS) {
             displayWinner("Tie!");
         }
-
     }
-
 
     public void enableButtons(boolean enable) {
         hoopG.setEnabled(enable);
@@ -177,7 +171,6 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Method to keep data with rotation
      */
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         outState.putInt("scoreG", scoreG);
@@ -202,6 +195,4 @@ public class MainActivity extends AppCompatActivity {
             enableButtons(false);
         }
     }
-
-
 }
