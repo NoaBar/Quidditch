@@ -43,45 +43,34 @@
         style="@style/groupImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/Gryffindor_symbol"
         android:src="@drawable/griffindor"
-        app:layout_constraintEnd_toEndOf="@+id/g_title"
-        app:layout_constraintStart_toStartOf="@+id/g_title"
+        app:layout_constraintEnd_toStartOf="@+id/s_image"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/g_title" />
 
     <TextView
         android:id="@+id/g_score"
         style="@style/score"
         android:layout_width="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:text="@string/scoreG"
         app:layout_constraintBaseline_toBaselineOf="@+id/s_score"
-        app:layout_constraintEnd_toEndOf="@+id/g_image"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="@+id/g_image" />
+        app:layout_constraintEnd_toStartOf="@+id/s_score"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/hoopG"
         style="@style/buttons"
         android:layout_width="84dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="16dp"
         android:onClick="add10ForG"
         android:text="@string/hoopG"
-        app:layout_constraintEnd_toEndOf="@+id/g_image"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/g_image"
+        app:layout_constraintEnd_toStartOf="@+id/hoopS"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/g_score" />
 
     <Button
@@ -89,28 +78,27 @@
         style="@style/buttons"
         android:layout_width="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:onClick="add20ForG"
         android:text="@string/penalty_shotG"
         app:layout_constraintBaseline_toBaselineOf="@+id/penaltyS"
-        app:layout_constraintEnd_toEndOf="@+id/g_image"
-        app:layout_constraintHorizontal_bias="0.352"
-        app:layout_constraintStart_toStartOf="@+id/g_image" />
+        app:layout_constraintEnd_toStartOf="@+id/penaltyS"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/snitchG"
         style="@style/buttons"
         android:layout_width="wrap_content"
         android:layout_height="51dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
         android:background="@color/orange"
         android:onClick="add150ForG"
+        android:padding="8dp"
         android:text="@string/snitch_catchG"
         app:layout_constraintBaseline_toBaselineOf="@+id/snitchS"
-        app:layout_constraintEnd_toEndOf="@+id/g_image"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/g_image" />
+        app:layout_constraintEnd_toStartOf="@+id/snitchS"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView
@@ -134,15 +122,12 @@
         style="@style/groupImage"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/Slytherin_symbol"
         android:src="@drawable/slytherin"
-        app:layout_constraintEnd_toEndOf="@+id/s_title"
-        app:layout_constraintStart_toStartOf="@+id/s_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/g_image"
         app:layout_constraintTop_toBottomOf="@+id/s_title" />
 
 
@@ -150,13 +135,10 @@
         android:id="@+id/s_score"
         style="@style/score"
         android:layout_width="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:text="@string/scoreS"
-        app:layout_constraintEnd_toEndOf="@+id/s_image"
-        app:layout_constraintStart_toStartOf="@+id/s_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/g_score"
         app:layout_constraintTop_toBottomOf="@+id/s_image" />
 
     <Button
@@ -164,16 +146,12 @@
         style="@style/buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:onClick="add10ForS"
         android:text="@string/hoopS"
         app:layout_constraintBaseline_toBaselineOf="@+id/hoopG"
-        app:layout_constraintEnd_toEndOf="@+id/s_image"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="@+id/s_image" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/hoopG" />
 
     <Button
         android:id="@+id/penaltyS"
@@ -181,27 +159,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
         android:onClick="add20ForS"
         android:text="@string/penalty_shotS"
-        app:layout_constraintEnd_toEndOf="@+id/s_image"
-        app:layout_constraintHorizontal_bias="0.352"
-        app:layout_constraintStart_toStartOf="@+id/s_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/penaltyG"
         app:layout_constraintTop_toBottomOf="@+id/hoopS" />
 
     <Button
         android:id="@+id/snitchS"
         style="@style/buttons"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:background="@color/orange"
         android:onClick="add150ForS"
+        android:padding="8dp"
         android:text="@string/snitch_catchS"
-        app:layout_constraintEnd_toEndOf="@+id/s_image"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/s_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/snitchG"
         app:layout_constraintTop_toBottomOf="@+id/penaltyS" />
 
 
@@ -249,8 +228,8 @@
         android:background="@color/oldBackground"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/whoWonT"
-        app:layout_constraintEnd_toStartOf="@+id/s_score"
-        app:layout_constraintStart_toEndOf="@+id/g_score"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quidditch"></LinearLayout>
 
 
