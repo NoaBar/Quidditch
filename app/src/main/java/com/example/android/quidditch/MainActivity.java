@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
     int scoreS = 0;
@@ -128,7 +127,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void resetScore(View view) {
-        animateToKeyframeReset();
+        if (whoWon != "Who will win?") {
+            animateToKeyframeReset();
+        }
         scoreS = 0;
         displayForS();
         scoreG = 0;

@@ -33,9 +33,9 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/gryffindor"
+        app:layout_constraintBaseline_toBaselineOf="@+id/s_title"
         app:layout_constraintEnd_toStartOf="@+id/linear"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linear" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/g_image"
@@ -47,6 +47,7 @@
         android:contentDescription="@string/Gryffindor_symbol"
         android:src="@drawable/griffindor"
         app:layout_constraintEnd_toStartOf="@+id/linear"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/g_title" />
 
@@ -55,10 +56,11 @@
         style="@style/score"
         android:layout_width="wrap_content"
         android:text="@string/scoreG"
-        app:layout_constraintBaseline_toBaselineOf="@+id/s_score"
         app:layout_constraintEnd_toStartOf="@+id/linear"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/g_image" />
 
     <Button
         android:id="@+id/hoopG"
@@ -172,10 +174,9 @@
         android:id="@+id/whoWonT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/who_will_win"
         android:textColor="@color/midnightBlue"
@@ -183,15 +184,13 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/reset"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/snitchS"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:onClick="resetScore"
